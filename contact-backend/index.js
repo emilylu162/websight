@@ -37,7 +37,13 @@ app.post('/contact', async (req, res) => {
     from: email,
     to: process.env.MAIL_USER,
     subject: `New Contact Form Submission from ${name}`,
-    text: message,
+    text: `
+        You got a new message via your portfolio site:
+
+          Name: ${name}
+          Email: ${email}
+          Message: ${message}
+    `
   };
 
   try {
