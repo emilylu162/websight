@@ -31,6 +31,9 @@ body {
 }
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: var(--accent-color);
   color: white;
   padding: 20px 0;
@@ -308,6 +311,31 @@ footer {
   text-align: center;
   margin: 40px 0; 
 }
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-bottom: 20px;
+  color: var(--text-color);
+}
+
+.footer-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.footer-icons a:hover img {
+  transform: scale(1.2);
+}
+
 
 
 
