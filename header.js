@@ -8,7 +8,9 @@ const pageTitles = {
   'index.html': 'Welcome!',
   'about.html': 'Me! (but professionally)',
   'contact.html': "Let's Connect!",
-  'whoops.html': 'Whoops!'
+  'whoops.html': 'Whoops!',
+  'extracurriculars.html': 'Me! (but personally)',
+  'projects.html': 'Cool things I&#39;ve done'
 };
 
 // Fallback title
@@ -20,6 +22,8 @@ header.innerHTML = `
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">Resume</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="extracurriculars.html">Extracurriculars</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
