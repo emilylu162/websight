@@ -9,7 +9,7 @@ const pageTitles = {
   'about.html': 'Me! (but professionally)',
   'contact.html': "Let's Connect!",
   'whoops.html': 'Whoops!',
-  'extracurriculars.html': 'Me! (but personally)',
+  'extracurriculars.html': 'Catch Me Outside the Classroom...',
   'projects.html': 'Cool things I&#39;ve done'
 };
 

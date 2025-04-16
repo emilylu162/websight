@@ -15,10 +15,131 @@
   </div> 
 
   <main>
+    <h2>Click to learn more!</h2>
+    <section class="extracurriculars-grid">
+        <div class="card" data-title="Break the Binary">
+          <h3>Break the Binary</h3>
+        </div>
+        <div class="card" data-title="ACM W Projects">
+          <h3>ACM W Projects</h3>
+        </div>
+        <div class="card" data-title="Foundations">
+          <h3>Foundations</h3>
+        </div>
+        <div class="card" data-title="Creative Labs">
+            <h3>Creative Labs</h3>
+        </div>
+        <div class="card" data-title="Daily Bruin">
+            <h3>Daily Bruin</h3>
+        </div>
+        <div class="card" data-title="Hackathons">
+            <h3>Hackathons</h3>
+        </div>
+      </section>
+      
+      <div id="card-detail" style="display: none;">
+        <div class="detail-content">
+          <button id="close-detail">×</button>
+          <h2 id="detail-title">Default Title</h2>
+          <img id="detail-image" src="" alt="" style="display: none;" />
 
-    
-
+          <div class="video-wrapper" id="detail-video-wrapper" style="display: none;">
+            <iframe
+              id="detail-video"
+              width="100%"
+              height="315"
+              src=""
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+              <p id="detail-description">Default description</p>
+        </div>
+      </div>
   </main>
+
+  <script>
+    const cards = document.querySelectorAll('.card');
+    const detail = document.getElementById('card-detail');
+    const closeBtn = document.getElementById('close-detail');
+    const titleEl = document.getElementById('detail-title');
+    const descEl = document.getElementById('detail-description');
+  
+    const cardContent = {
+      "Break the Binary": {
+            description: "I was the Director of Break the Binary, an introductory competitive programming competition aiming to break down barriers in tech and promote inclusitivity. From dealing with last minute auditorium changes to trying to find speakers, it was one of the best planning experiences I've ever had!",
+            image: "./images/btb.jpg"
+      },
+      "ACM W Projects":{
+            description: "As a Projects Officer, I ran the ACM W Fellowship, a two-quarter program teaching novice programmers how to build a full-stack web application for social good. While tech may be mainstream now, it's hard to break in and figure out how to build. Our goal was to lead underclassmen in building a portfolio-worthy project and teach them all the insider knowledge they needed to succeed in tech.",
+            image: "./images/fellowship.png"
+      },
+      "Foundations": {
+            description: "Open style choreography that builds beginner and intermediate dancers up! Look at my showcase :)",
+            video: "https://www.youtube.com/embed/GUPvB3eI0eo?si=MYDV6SIxfXOAuIZT"
+      },
+      "Creative Labs":{
+            description: "I was a Backend Developer for a special project called Brallium. We used MongoDB to build our e-commerce website where users could log in, purchase items, and even read blog posts. Our mission was to increase exposure for environmentally sustainable nipple covers."
+      },
+      "Daily Bruin":{
+            description: "As part of UCLA's largest student media organization, I developed a CRUD app so writers could keep track of their sources in an organized database."
+      },
+      "Hackathons":{
+            description: "👀"
+      }
+    };
+  
+    cards.forEach(card => {
+    card.addEventListener('click', () => {
+        const title = card.dataset.title;
+        const content = cardContent[title];
+
+        titleEl.textContent = title;
+        descEl.textContent = content.description || "";
+
+        const imageEl = document.getElementById('detail-image');
+        const videoWrapper = document.getElementById('detail-video-wrapper');
+        const videoEl = document.getElementById('detail-video');
+
+        if (content.image) {
+        imageEl.src = content.image;
+        imageEl.alt = `${title} image`;
+        imageEl.style.display = 'block';
+
+        videoWrapper.style.display = 'none';
+        videoEl.src = ""; // clear video
+        } else if (content.video) {
+        imageEl.style.display = 'none';
+        imageEl.src = "";
+
+        videoWrapper.style.display = 'block';
+        videoEl.src = content.video;
+        } else {
+        imageEl.style.display = 'none';
+        imageEl.src = "";
+        videoWrapper.style.display = 'none';
+        videoEl.src = "";
+        }
+
+        detail.style.display = 'flex';
+    });
+    });
+
+  
+    closeBtn.addEventListener('click', () => {
+        detail.style.display = 'none';
+
+    });
+
+    closeBtn.addEventListener('click', () => {
+        detail.style.display = 'none';
+        document.getElementById('detail-video').src = ""; // Stop video
+    });
+
+  </script>
+  
   <script src="footer.js"></script>
   <script src="theme.js"></script>
 
