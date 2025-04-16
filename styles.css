@@ -111,7 +111,7 @@ footer {
   width: 220px;
   background-color: var(--accent-color);
   color: white;
-  text-align: left;
+  text-align: center;
   border-radius: 6px;
   padding: 8px;
   position: absolute;
@@ -287,6 +287,29 @@ footer {
   color: var(--text-color);
   border: 1px solid var(--accent-color);
 }
+
+.resume-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resume-button:hover {
+  background-color: var(--hover-accent);
+}
+
+.centered-resume-button {
+  text-align: center;
+  margin: 40px 0; 
+}
+
+
 
 
 
