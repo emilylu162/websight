@@ -91,6 +91,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
   margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .course {
@@ -260,7 +261,7 @@ footer {
 .timeline-date {
   font-size: 0.9rem;
   font-weight: 500;
-  color: #888;
+  color: #c6c2c2;
   display: block;
   margin-bottom: 10px;
 }
@@ -270,6 +271,23 @@ footer {
   line-height: 1.6;
   color: var(--text-color);
 }
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.skill {
+  background-color: var(--card-bg);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  border: 1px solid var(--accent-color);
+}
+
 
 
 
